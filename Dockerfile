@@ -14,7 +14,7 @@ RUN npm install
 RUN npm run build
 
 # --- Run the app ---
-FROM nginx:1.25.5
+FROM nginx:1.26.1
 COPY --from=build /usr/src/fabriquepar/dist usr/share/nginx/html/fabriquepar
 COPY --from=build /usr/src/fabriquepar/configuration/nginx.conf /etc/nginx/conf.d/default.conf
 
